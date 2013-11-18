@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/whirlpool-dojo-timer.css" />
+
+    <script src="js/knockout-3.0.0.js"></script>
+    <script src="js/whirlpool-dojo-timer.js"></script>
+
+    <title>Whrilpool Dojo Timer</title>
+  </head>
+  <body>
+    <h1>Whirlpool Dojo Timer</h1>
+
+
+<div id="timer">
+      <span id="timer_minutes" class="time_container" data-bind="text: minutes"></span>
+      <div id="timer_separator" >:</div>
+      <span id="timer_seconds" class="time_container" data-bind="text: seconds"></span>
+    </div>
+
+    <div id="button_container" >
+      <button id="start_timer" >START</button>
+      <button id="reset_timer" >RESET</button>
+    </div>
+
+
+
+    <script>
+      clock = new Clock();
+      ko.applyBindings(clock);
+
+      var intervalId;
+      document.getElementById("start_timer").onclick = function (evnt) {
+        if (intervalId == undefined) {
+          evnt.target.innerText = "STOP";
+          intervalId = setInterval("clock.tick(switchNavigators, switchPairs)", 50);
+        } else {
+          evnt.target.innerText = "START";
+          clearInterval(intervalId);
+          intervalId = undefined;
+        }
+      };
+
+      document.getElementById("reset_timer").onclick = function (evnt) {
+        clearInterval(intervalId);
+        intervalId = undefined;
+        document.getElementById("start_timer").innerText = "START";
+        clock.reset();
+      };
+
+    </script>
+  </body>
+</html>

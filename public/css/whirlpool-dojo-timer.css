@@ -1,0 +1,50 @@
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 960px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  color: darkblue;
+}
+
+#timer div, #timer span {
+  font-size: 60px;
+  display: inline-block;
+}
+
+#button_container {
+  text-align: center;
+}
+
+#timer_separator {
+  margin: 0 10px;
+}
+
+.time_container {
+  border: solid 1px lightgray;
+  border-radius: 5px;
+  padding: 30px 50px;
+  color: cadetblue;
+  min-width: 90px;
+}
+
+button {
+  text-align: center;
+  border: solid 0px darkblue;
+  background-color: darkblue;
+  color: white;
+  padding: 15px 150px; 
+  font-size: 26px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #33A;
+}
