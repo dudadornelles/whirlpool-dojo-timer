@@ -33,7 +33,7 @@
       document.getElementById("start_timer").onclick = function (evnt) {
         if (intervalId == undefined) {
           evnt.target.innerText = "STOP";
-          intervalId = setInterval("clock.tick(switchNavigators, switchPairs)", 50);
+          intervalId = setInterval("clock.tick(switchNavigators, switchPairs)", 1000);
         } else {
           evnt.target.innerText = "START";
           clearInterval(intervalId);
