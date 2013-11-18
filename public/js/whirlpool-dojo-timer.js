@@ -27,30 +27,30 @@ function Clock() {
 
 }
 
-function playTwice(audioPath) {
+function playTwice(audioPath, offsetTime) {
   var audio = new Audio("audio/" + audioPath);
   audio.play()
   audio = new Audio("audio/" + audioPath);
   function play() {
     audio.play();
   }
-  setTimeout(play, 2500);
+  setTimeout(play, offsetTime);
 }
 
 function switchNavigators() {
-    playTwice("switch_driver_navigator.mp3");
+    playTwice("switch_driver_navigator.mp3", 2500);
 }
 
 var RIGHT = 0, LEFT = 1;
 var switchDirection = RIGHT;
 function switchPairs() {
   if (switchDirection == RIGHT) {
-    playTwice("switch_pairs_right.mp3");
+    playTwice("switch_pairs_right.mp3", 3000);
     switchDirection = LEFT;
   } else {
-    playTwice("switch_pairs_left.mp3");
+    playTwice("switch_pairs_left.mp3", 3000);
     switchDirection = RIGHT;
   }
-  setTimeout("alert(\"Please switch pairs and press OK to continue\")", 5000);
+  setTimeout("alert(\"Please switch pairs and press OK to continue\")", 6000);
 }
 
